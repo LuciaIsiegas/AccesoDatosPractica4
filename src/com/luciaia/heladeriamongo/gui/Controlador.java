@@ -6,15 +6,12 @@ import com.luciaia.heladeriamongo.base.Venta;
 import com.luciaia.heladeriamongo.util.Util;
 
 import javax.swing.*;
-import javax.swing.event.ListSelectionEvent;
-import javax.swing.event.ListSelectionListener;
 import java.awt.*;
 import java.awt.event.*;
-import java.util.List;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-public class Controlador implements ActionListener, KeyListener, ListSelectionListener {
+public class Controlador implements ActionListener, WindowListener {
     Vista vista;
     Modelo modelo;
     boolean editando;
@@ -760,6 +757,9 @@ public class Controlador implements ActionListener, KeyListener, ListSelectionLi
 
 
     // LISTENERS --------------------------------------------------------------------------------------------
+    private void addWindowListeners(WindowListener listener) {
+        vista.addWindowListener(listener);
+    }
 
     /***
      * Añadir los listener
@@ -959,22 +959,44 @@ public class Controlador implements ActionListener, KeyListener, ListSelectionLi
     }
 
     @Override
-    public void keyTyped(KeyEvent e) {
+    public void windowOpened(WindowEvent e) {
 
     }
 
     @Override
-    public void keyPressed(KeyEvent e) {
+    public void windowClosing(WindowEvent e) {
+        Window ventana = e.getWindow();
+
+        if (ventana == vista) {
+            int resp = Util.mensajeConfirmación("¿Desea cerrar la vetana?", "Salir");
+            if (resp == JOptionPane.OK_OPTION || resp == JOptionPane.YES_OPTION) {
+                System.exit(0);
+            }
+        }
+    }
+
+    @Override
+    public void windowClosed(WindowEvent e) {
 
     }
 
     @Override
-    public void keyReleased(KeyEvent e) {
+    public void windowIconified(WindowEvent e) {
 
     }
 
     @Override
-    public void valueChanged(ListSelectionEvent e) {
+    public void windowDeiconified(WindowEvent e) {
+
+    }
+
+    @Override
+    public void windowActivated(WindowEvent e) {
+
+    }
+
+    @Override
+    public void windowDeactivated(WindowEvent e) {
 
     }
 }

@@ -1,0 +1,12 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Practica-UD4-LuciaIsiegas:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/Practica_UD4_LuciaIsiegas_jar</output-path>
+    <root id="archive" name="Practica-UD4-LuciaIsiegas.jar">
+      <element id="module-output" name="Practica-UD4-LuciaIsiegas" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/libs/jgoodies-common-1.8.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/libs/jgoodies-forms-1.8.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/libs/LGoodDatePicker-8.3.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/libs/mongo-java-driver-3.6.3.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>
